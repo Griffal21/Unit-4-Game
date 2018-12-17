@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <title>Crystal Game</title>
+</head>
+
+<body>
+
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Crystals Collector</h1>
+      <br><br>
+      <p>You will be given a random number at the start of the game.</p>
+      <br>
+      <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total
+        score.</p>
+      <br>
+      <p>You win the game by batching your total score to a random number, you lose the game if your total score goes
+        above the random number.</p>
+      <br>
+      <p>The value of each crystal is hidden from you until you click on it.</p>
+      <br>
+      <p>Each time when the game starts, the game will change the values of each crystal.</p>
+      <br><br>
+      <button type="button" class="btn btn-dark btn-lg start">Click To Play!</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="card">
+        <div class="card-body">
+          <!-- Hey buddy! this is where you have the random number displayed -->
+          <div id="randomNum"></div> 
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <!-- Hey buddy! this is where you have the score -->
+          <div id="wins"></div>
+          <div id="losses"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="card">
+        <div class="card-body">
+          <button type="button" class="btn btn-primary btn-lg Newton">Newton</button>
+          <button type="button" class="btn btn-warning btn-lg Euler">Euler</button>
+          <button type="button" class="btn btn-danger btn-lg Leibniz">Leibniz</button>
+          <button type="button" class="btn btn-success btn-lg Gauss">Gauss</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+          <!-- Hey buddy! this is where you have the player's number -->
+          <div id="userTotal"></div>
+        </div>
+      </div>
+  </div>
+
+
+
+
+
+
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+
+</html>
