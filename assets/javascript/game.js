@@ -21,7 +21,7 @@ $(document).ready(function game() {
   //Define action buttons
   $("#Newton").on("click", function () {
     userTotal = parseInt(userTotal) + parseInt(NewtonNumber);
-    $("#userTotal").html(userTotal);
+    $("#userTotal").html("Your Number: " + userTotal);
     console.log("user " + userTotal);
     //Determine if player wins or losers
     if (userTotal === randomNumber) {
@@ -29,7 +29,7 @@ $(document).ready(function game() {
       //displays wins correctly
       wins++;
       //document.getElementById("wins").HTML = "Wins " + wins;
-      $("#wins").html(wins);
+      $("#wins").html("Wins: " + wins);
       //resets the game
       game();
       userTotal = 0;
@@ -40,7 +40,7 @@ $(document).ready(function game() {
       //displays wins correctly
       losses++;
       //document.getElementById("losses").HTML = "Losses " + losses;
-      $("#losses").html(losses);
+      $("#losses").html("Losses: " + losses);
       //resets the game
       game();
       userTotal = 0;
@@ -50,7 +50,7 @@ $(document).ready(function game() {
 
   $("#Euler").on("click", function () {
     userTotal = parseInt(userTotal) + parseInt(EulerNumber);
-    $("#userTotal").html(userTotal);
+    $("#userTotal").html("Your Number: " + userTotal);
     console.log("user " + userTotal);
     //Determine if player wins or losers
     if (userTotal === randomNumber) {
@@ -58,7 +58,7 @@ $(document).ready(function game() {
       //displays wins correctly
       wins++;
       //document.getElementById("wins").HTML = "Wins " + wins;
-      $("#wins").html(wins);
+      $("#wins").html("Wins: " + wins);
       //resets the game
       game();
       userTotal = 0;
@@ -69,7 +69,7 @@ $(document).ready(function game() {
       //displays wins correctly
       losses++;
       //document.getElementById("losses").HTML = "Losses " + losses;
-      $("#losses").html(losses);
+      $("#losses").html("Losses: " + losses);
       //resets the game
       game();
       userTotal = 0;
@@ -78,7 +78,7 @@ $(document).ready(function game() {
 
   $("#Leibniz").on("click", function () {
     userTotal = parseInt(userTotal) + parseInt(LeibnizNumber);
-    $("#userTotal").html(userTotal);
+    $("#userTotal").html("Your Number: " + userTotal);
     console.log("user " + userTotal);
     //Determine if player wins or losers
     if (userTotal === randomNumber) {
@@ -86,7 +86,7 @@ $(document).ready(function game() {
       //displays wins correctly
       wins++;
       //document.getElementById("wins").HTML = "Wins " + wins;
-      $("#wins").html(wins);
+      $("#wins").html("Wins: " + wins);
       //resets the game
       game();
       userTotal = 0;
@@ -97,7 +97,7 @@ $(document).ready(function game() {
       //displays wins correctly
       losses++;
       //document.getElementById("losses").HTML = "Losses " + losses;
-      $("#losses").html(losses);
+      $("#losses").html("Losses: " + losses);
       //resets the game
       game();
       userTotal = 0;
@@ -106,7 +106,7 @@ $(document).ready(function game() {
 
   $("#Gauss").on("click", function () {
     userTotal = parseInt(userTotal) + parseInt(GaussNumber);
-    $("#userTotal").html(userTotal);
+    $("#userTotal").html("Your Number: " + userTotal);
     console.log("user " + userTotal);
     //Determine if player wins or losers
     if (userTotal === randomNumber) {
@@ -114,7 +114,7 @@ $(document).ready(function game() {
       //displays wins correctly
       wins++;
       //document.getElementById("wins").HTML = "Wins " + wins;
-      $("#wins").html(wins);
+      $("#wins").html("Wins: " + wins);
       //resets the game
       game();
       userTotal = 0;
@@ -125,7 +125,7 @@ $(document).ready(function game() {
       //displays wins correctly
       losses++;
       //document.getElementById("losses").HTML = "Losses " + losses;
-      $("#losses").html(losses);
+      $("#losses").html("Losses: " + losses);
       //resets the game
       game();
       userTotal = 0;
@@ -138,8 +138,8 @@ $(document).ready(function game() {
   //display the target and the user's total
   //document.getElementById("#randomNum").html = randomNumber;
   //document.getElementById("#userTotal").HTML = userTotal;
-  $("#randomNum").html("Target " + randomNumber);
-  $("#userTotal").html("Your Number " + userTotal);
+  $("#randomNum").html("Target: " + randomNumber);
+  $("#userTotal").html("Your Number: " + userTotal);
 
   console.log("target " + randomNumber);
   console.log("Newton " + NewtonNumber);
