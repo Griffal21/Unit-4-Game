@@ -1,92 +1,150 @@
-// variable declorations
-
-var userTotal = 0;
 var randomNumber = 0;
-var NewtonNum = 0;
-var EulerNum = 0;
-var LeibnizNum = 0;
-var GaussNum = 0;
 var wins = 0;
 var losses = 0;
+var gameOver = false;
+
+$(document).ready(function game() {
+
+  var userTotal = 0;
 
 
-
-//JavaScript functin that wraps everything
-//Going off of the Captain Planet Game which had this
-$(document).startGame(function() {
-
-  //Start button
-  $(".start").on("click", function() {
-    //resets for next round
-    userNumber = 0;
-    //Generate a random number
-    randomNumber = Math.floor(Math.random() * (100 - 30) ) + 30;
-    //Generate random numbers for the user buttons
-    //return Math.floor(Math.random() * (max - min) ) + min; from w3
-    NewtonNumber = Math.floor(Math.random() * (10 - 1) ) + 1;
-    EulerNumber = Math.floor(Math.random() * (10 - 1) ) + 1;
-    LeibnizNumber = Math.floor(Math.random() * (10 - 1) ) + 1;
-    GaussNumber = Math.floor(Math.random() * (10 - 1) ) + 1;
-
-    // This ensures at least one number is odd. In the case all buttons are even and the target number is odd the game is unwinable
-     if ((Number.isInteger(NewtonNumber/2))&&
-       (Number.isInteger(EulerNumber/2)) &&
-       (Number.isInteger(LeibnizNumber/2)) &&
-       (Number.isInteger(GaussNumber/2))) 
-       {EulerNumber = 1};
-
-
-
-    console.log("target " + randomNumber)
-    console.log("Newton " + NewtonNumber)
-    console.log("Euler " + EulerNumber)
-    console.log("Leibniz " + LeibnizNumber)
-    console.log("Gauss " + GaussNumber)
-  });
+  //Generate a random number
+  randomNumber = Math.floor(Math.random() * (100 - 30)) + 30;
+  //Generate random numbers for the user buttons
+  //return Math.floor(Math.random() * (max - min) ) + min; from w3
+  var NewtonNumber = Math.floor(Math.random() * (10 - 1)) + 1;
+  var EulerNumber = Math.floor(Math.random() * (10 - 1)) + 1;
+  var LeibnizNumber = Math.floor(Math.random() * (10 - 1)) + 1;
+  var GaussNumber = Math.floor(Math.random() * (10 - 1)) + 1;
+  
 
   //Define action buttons
-  $(".Newton").on("click", function() {
-    userTotal = userTotal + NewtonNumber;
+  $("#Newton").on("click", function () {
+    userTotal = parseInt(userTotal) + parseInt(NewtonNumber);
+    $("#userTotal").html(userTotal);
+    console.log("user " + userTotal);
+    //Determine if player wins or losers
+    if (userTotal === randomNumber) {
+      alert("You Win!")
+      //displays wins correctly
+      wins++;
+      //document.getElementById("wins").HTML = "Wins " + wins;
+      $("#wins").html(wins);
+      //resets the game
+      game();
+      userTotal = 0;
+    }
+
+    if (userTotal > randomNumber) {
+      alert("You Lose!")
+      //displays wins correctly
+      losses++;
+      //document.getElementById("losses").HTML = "Losses " + losses;
+      $("#losses").html(losses);
+      //resets the game
+      game();
+      userTotal = 0;
+    } 
+    
   });
-  $(".Euler").on("click", function() {
-    userTotal = userTotal + EulerNumber;
+
+  $("#Euler").on("click", function () {
+    userTotal = parseInt(userTotal) + parseInt(EulerNumber);
+    $("#userTotal").html(userTotal);
+    console.log("user " + userTotal);
+    //Determine if player wins or losers
+    if (userTotal === randomNumber) {
+      alert("You Win!")
+      //displays wins correctly
+      wins++;
+      //document.getElementById("wins").HTML = "Wins " + wins;
+      $("#wins").html(wins);
+      //resets the game
+      game();
+      userTotal = 0;
+    }
+
+    if (userTotal > randomNumber) {
+      alert("You Lose!")
+      //displays wins correctly
+      losses++;
+      //document.getElementById("losses").HTML = "Losses " + losses;
+      $("#losses").html(losses);
+      //resets the game
+      game();
+      userTotal = 0;
+    } 
   });
-  $(".Leibniz").on("click", function() {
-    userTotal = userTotal + LeibnizNumber;
+
+  $("#Leibniz").on("click", function () {
+    userTotal = parseInt(userTotal) + parseInt(LeibnizNumber);
+    $("#userTotal").html(userTotal);
+    console.log("user " + userTotal);
+    //Determine if player wins or losers
+    if (userTotal === randomNumber) {
+      alert("You Win!")
+      //displays wins correctly
+      wins++;
+      //document.getElementById("wins").HTML = "Wins " + wins;
+      $("#wins").html(wins);
+      //resets the game
+      game();
+      userTotal = 0;
+    }
+
+    if (userTotal > randomNumber) {
+      alert("You Lose!")
+      //displays wins correctly
+      losses++;
+      //document.getElementById("losses").HTML = "Losses " + losses;
+      $("#losses").html(losses);
+      //resets the game
+      game();
+      userTotal = 0;
+    } 
   });
-  $(".Gauss").on("click", function() {
-    userTotal = userTotal + Gauss;
+
+  $("#Gauss").on("click", function () {
+    userTotal = parseInt(userTotal) + parseInt(GaussNumber);
+    $("#userTotal").html(userTotal);
+    console.log("user " + userTotal);
+    //Determine if player wins or losers
+    if (userTotal === randomNumber) {
+      alert("You Win!")
+      //displays wins correctly
+      wins++;
+      //document.getElementById("wins").HTML = "Wins " + wins;
+      $("#wins").html(wins);
+      //resets the game
+      game();
+      userTotal = 0;
+    }
+
+    if (userTotal > randomNumber) {
+      alert("You Lose!")
+      //displays wins correctly
+      losses++;
+      //document.getElementById("losses").HTML = "Losses " + losses;
+      $("#losses").html(losses);
+      //resets the game
+      game();
+      userTotal = 0;
+    }
+     
   });
+
+
 
   //display the target and the user's total
-    document.getElementById("randomNum").innerHTML = randomNumber;
-    document.getElementById("userTotal").innerHTML = userTotal;
+  //document.getElementById("#randomNum").html = randomNumber;
+  //document.getElementById("#userTotal").HTML = userTotal;
+  $("#randomNum").html("Target " + randomNumber);
+  $("#userTotal").html("Your Number " + userTotal);
 
+  console.log("target " + randomNumber);
+  console.log("Newton " + NewtonNumber);
+  console.log("Euler " + EulerNumber);
+  console.log("Leibniz " + LeibnizNumber);
+  console.log("Gauss " + GaussNumber);
 
-  //Determine if player wins or losers
-  if (userTotal === randomNumber) {
-    alert("You Win!")
-    //displays wins correctly
-    wins++;
-    document.getElementById("wins").innerHTML = wins;
-    //resets the game
-    startGame();
-  }
-
-  if (userTotal > randomNumber) {
-    alert("You Lose")
-    //displays wins correctly
-    losses++;
-    document.getElementById("losses").innerHTML = losses;
-    //resets the game
-    startGame();
-  }
-
-
-
-
-
-
-
-
-})
+});
